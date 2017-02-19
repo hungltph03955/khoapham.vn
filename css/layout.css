@@ -15,7 +15,7 @@ ul{ list-style:none}
 .tlq a:hover{ color:#900;}
 .xemthem{ color:#666; font-size:11px;}
 .xemthem:hover{ color:#069;}
-.hit{ background:url(../images/icon_title.png) -22px 0 no-repeat; width:2px; height:10px; float:right; color:#900; margin:0 8px 0 0; padding:0 0 0 18px; font-weight:normal; font-size:11px}
+.hit{ background:url(../images/icon_title.png) -22px 0 no-repeat; width:7px; height:10px; float:right; color:#900; margin:0 8px 0 0; padding:0 0 0 18px; font-weight:normal; font-size:11px}
 
 
 
@@ -47,6 +47,11 @@ ul{ list-style:none}
 	#slideleft-scroll{ width:25%; float:left; border-left:solid 1px #E2E2E3; border-right:solid 1px #E2E2E3; padding : 2px 5px 2px 5px}
 	#slideleft-scroll ul li{ padding: 5px; border-bottom:1px solid #E2E2E3; float:left}
 	#slideleft-scroll a{ color:#666}
+	#slideleft-scroll a:hover
+	{ 
+		color: #1fd450;
+		transition: 0.5s;
+	}
 	
 #content-vp{}
 	#content-vp #content-left{border-right:solid 1px #E2E2E3; width:16%; float:left; padding: 5px; min-height:500px;}
