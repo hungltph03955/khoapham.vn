@@ -1,6 +1,11 @@
-<img width="280" src="images/1.png" />
+<?php 
+	$vitri = 1;
+	$quangcao = QuangCao($vitri);
+	while ($row_quangcao = mysql_fetch_array($quangcao)) {
+
+?>
+<img width="280" src="upload/quangcao/<?php echo $row_quangcao['urlHinh'] ?>" />
 <div style="height:10px"></div>
-<img width="280" src="images/2.png" />
-<div style="height:10px"></div>
-<img width="280" src="images/3.png" />
-<div style="height:10px"></div>
+<?php 
+	}
+?>

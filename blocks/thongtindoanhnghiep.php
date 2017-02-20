@@ -87,21 +87,15 @@
 
         <!-- Slides Container -->
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1000px; height: 150px; overflow: hidden;">
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
+        <?php 
+            $vitri = 2;
+            $quangcao = QuangCao($vitri);
+            while ($row_quangcao = mysql_fetch_array($quangcao)) {
+        ?>
+            <div><img u="image" src="upload/quangcao/<?php echo $row_quangcao['urlHinh'] ?>" /></div>
+        <?php 
+            }
+        ?>
         </div>
         
         <!-- Bullet Navigator Skin Begin -->

@@ -23,7 +23,7 @@ require "lib/trangchu.php";
     	<div id="logo"><img src="images/logo.gif" /></div>
     </div>
     
-    <div id="menu-vp">
+    <div>
         <?php 
             require "blocks/menu.php";
         ?>
