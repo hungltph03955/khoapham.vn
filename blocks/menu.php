@@ -53,7 +53,7 @@ ddsmoothmenu.init({
   	$loaitin = DanhSachLoaiTin_Theo_TheLoai($idTL);
   	while ($row_loaitin = mysql_fetch_array($loaitin)) {
   ?>
-  <li><a href="index.php?=tintrongloai&idLT=<?php echo $row_loaitin['idLT'] ?>"><?php echo $row_loaitin['Ten'] ?></a></li>
+  <li><a href="index.php?p=tintrongloai&idLT=<?php echo $row_loaitin['idLT'] ?>"><?php echo $row_loaitin['Ten'] ?></a></li>
   <?php
   	}
   ?>

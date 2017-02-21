@@ -85,8 +85,44 @@
 	 	";
 	 	return mysql_query($qr);
 	}
-
-
-
+	function TinMoi_BenTrai($idTL)
+	{
+		$qr = "
+			SELECT * FROM tin
+			WHERE idTL = $idTL
+			ORDER BY idTin DESC
+			LIMIT 0,1
+		";
+		return mysql_query($qr);
+	}
+	function TinMoi_BenPhai($idTL)
+	{
+	 	$qr = "
+			SELECT * FROM tin 
+			WHERE  idTL = $idTL
+			ORDER BY idTin DESC
+			LIMIT 1,2
+		";
+		return mysql_query($qr);
+	}
+	function TinTheoLoaiTin($idLT)
+	{
+	 	$qr = "
+			SELECT * FROM tin 
+			WHERE  idLT = $idLT
+			ORDER BY idTin DESC
+		";
+		return mysql_query($qr);
+	} 
+	function breadCrumb($idLT)
+	{
+	 	$qr = "
+			SELECT TenTL, Ten 
+			FROM theloai, loaitin 
+			WHERE theloai.idTL = loaitin.idTL 
+			AND idLT=$idLT
+		";
+		return mysql_query($qr);
+	} 
 
 ?>
