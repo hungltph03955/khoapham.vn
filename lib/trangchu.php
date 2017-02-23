@@ -114,15 +114,53 @@
 		";
 		return mysql_query($qr);
 	} 
+	//phân trang
+	function TinTheoLoaiTin_PhanTrang($idLT,$form,$sotin1trang)
+	{
+	 	$qr = "
+			SELECT * FROM tin 
+			WHERE  idLT = $idLT
+			ORDER BY idTin DESC
+			LIMIT $form, $sotin1trang
+		";
+		return mysql_query($qr);
+	} 
+	//end phân trang
+
+
+
 	function breadCrumb($idLT)
 	{
 	 	$qr = "
 			SELECT TenTL, Ten 
 			FROM theloai, loaitin 
 			WHERE theloai.idTL = loaitin.idTL 
-			AND idLT=$idLT
+			AND idLT = $idLT
 		";
 		return mysql_query($qr);
 	} 
+
+	function ChiTietTin($idTin) 
+	{
+		$qr = "
+			SELECT * 
+			FROM tin 
+			WHERE idTin = $idTin
+		";
+		return mysql_query($qr);
+	}
+	
+	function TinCungLoaiTin($idTin,$idLT) 
+	{
+		$qr = "
+			SELECT idTin,TieuDe,urlHinh,SoLanXem
+			FROM tin 
+			WHERE idTin <>$idTin
+			AND idLT= $idLT
+			ORDER BY RAND()
+			LIMIT 0,3
+		";
+		return mysql_query($qr);
+	}
 
 ?>

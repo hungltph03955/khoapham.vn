@@ -124,7 +124,24 @@ ul{ list-style:none}
 	#footer .bot2{ width:30%}
 	#footer .bot3{ width:47%; float:right; text-align:right}
 	
-	
+.phantrang 
+{
+	text-align: center;
+	font-size: 20px;
+}
+.phantrang a
+{
+	padding-left: 9px;
+	padding-right: 9px;
+	color: #000;
+	background-color: #d4dad5;
+}
+.phantrang a:hover
+{
+	color: red;
+	transition: 0.5s;
+}
+
 	
 	
 	
