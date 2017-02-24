@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require "lib/dbCon.php";
 require "lib/trangchu.php";
     if ( isset($_GET["p"])) 
@@ -8,6 +9,40 @@ require "lib/trangchu.php";
     {
         $p = "";
     }
+?>
+<?php 
+    // kiểm tra dữ liệu đăng nhập
+        if (isset($_POST["btlLogin"])) 
+        {
+            $un = $_POST["txtUn"];
+            $pa = $_POST["txtPa"];
+            $pa = md5($pa);
+            $qr = "
+                SELECT * 
+                FROM users
+                WHERE Username = '$un'
+                AND Password = '$pa'
+            ";
+            $user = mysql_query($qr);
+            if (mysql_num_rows($user)==1 ) 
+            {
+                $row = mysql_fetch_array($user);
+                 $_SESSION["idUser"] = $row['idUser'];
+                 $_SESSION["Username"] = $row['Username'];
+                 $_SESSION["Password"] = $row['Password'];
+                 $_SESSION["HoTen"] = $row['HoTen'];
+                 $_SESSION["idGroup"] = $row['idGroup'];
+            }
+        }
+        if (isset($_POST["btlLogout"]))
+        {
+            unset($_SESSION["idUser"]);
+            unset($_SESSION["Username"]);
+            unset($_SESSION["Password"]);
+            unset($_SESSION["HoTen"]);
+            unset($_SESSION["idGroup"]);
+            /*session_unset();*/
+        }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -77,6 +112,9 @@ require "lib/trangchu.php";
                     case("chitiettin") : 
                         require "pages/chitiettin.php";
                     break;
+                     case("timkiem") : 
+                        require "pages/timkiem.php";
+                    break;
                     default:
                         require "pages/trangchu.php";
                 }
@@ -85,6 +123,13 @@ require "lib/trangchu.php";
             
         </div>
         <div id="content-right">
+        <?php 
+            if(!isset($_SESSION["idUser"])) {
+                require "blocks/formLogin.php";
+            }else{
+                require "blocks/formHello.php";
+            }
+        ?>
         <?php
             require "blocks/cot_phai.php";
         ?>

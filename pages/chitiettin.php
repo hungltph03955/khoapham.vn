@@ -7,6 +7,9 @@
   {
      $idTin = 1;
   }
+  CapNhatSoLanXemTin($idTin);
+?>
+<?php
   $tin = ChiTietTin($idTin);
   $tin_row = mysql_fetch_array($tin);
 ?>

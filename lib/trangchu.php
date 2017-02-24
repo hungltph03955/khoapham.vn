@@ -163,4 +163,23 @@
 		return mysql_query($qr);
 	}
 
+	function CapNhatSoLanXemTin($idTin) 
+	{
+		$qr = "
+			UPDATE tin 
+			SET SoLanXem = SoLanXem + 1
+			WHERE idTin = $idTin
+		";
+		mysql_query($qr);
+	}
+	function TimKiem($tukhoa) 
+	{
+		$qr = "
+			SELECT * 
+			FROM tin 
+			WHERE TieuDe REGEXP '$tukhoa'
+		";
+		return mysql_query($qr);
+	}
+
 ?>
