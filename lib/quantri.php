@@ -9,6 +9,15 @@ function DanhSachTheLoai()
 	";
 	return mysql_query($qr);
 }
+function ChiTietTheLoai($idTL) 
+{
+	$qr = "
+		SELECT * 
+		FROM theloai 
+		WHERE idTL = $idTL
+	";
+	return mysql_query($qr);
+}
 
 
 function stripUnicode($str){
