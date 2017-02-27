@@ -172,6 +172,7 @@
 		";
 		mysql_query($qr);
 	}
+	// hàm tìm kiếm 
 	function TimKiem($tukhoa) 
 	{
 		$qr = "
