@@ -51,7 +51,7 @@ require "../lib/quantri.php";
     <th>{ThuTu}</th>
     <th>{AnHien}</th>
     <th><a href="suaTheLoai.php?idTL={idTL}">Sửa</a></th>
-    <th><a href="xoaTheLoai.php?idTL={idTL}">Xóa</a></th>
+    <th><a onclick="return confirm('bạn có chắc chắn muốn xóa khay không ?')" href="xoaTheLoai.php?idTL={idTL}">Xóa</a></th>
   </tr>
   <?php 
     $stt ++;

@@ -18,6 +18,27 @@ function ChiTietTheLoai($idTL)
 	";
 	return mysql_query($qr);
 }
+//quản lí loại tin 
+function DanhSachLoaiTin() 
+{
+	$qr = "
+		SELECT  loaitin.Ten, loaitin.Ten_KhongDau, theloai.TenTL, theloai.TenTL_KhongDau,  loaitin.idLT, loaitin.ThuTu, loaitin.AnHien
+		FROM  loaitin,theloai
+		WHERE  theloai.idTL = loaitin.idTL
+		ORDER BY idLT DESC
+	";
+	return mysql_query($qr);
+}
+function ChiTietLoaiTin($idLT) 
+{
+	$qr = "
+		SELECT * 
+		FROM loaitin 
+		WHERE idLT = $idLT
+	";
+	$loaitin = mysql_query($qr);
+	return mysql_fetch_array($loaitin);
+}
 
 
 function stripUnicode($str){
