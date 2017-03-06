@@ -41,6 +41,22 @@ function ChiTietLoaiTin($idLT)
 }
 
 
+// quản lí tin 
+function DanhSachTin() 
+{
+	$qr = "
+		SELECT tin.*, TenTL,Ten
+		FROM tin,theloai,loaitin
+		WHERE  tin.idLT = loaitin.idLT
+		AND tin.idTL = theloai.idTL
+		ORDER BY idTin DESC 
+	 	LIMIT 0,20
+	";
+	return mysql_query($qr);
+}
+
+
+
 function stripUnicode($str){
   if(!$str) return false;
    $unicode = array(
